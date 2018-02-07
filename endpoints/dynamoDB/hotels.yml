@@ -1,0 +1,12 @@
+Type: AWS::DynamoDB::Table
+Properties:
+  TableName: hotels
+  ProvisionedThroughput:
+    ReadCapacityUnits:  1
+    WriteCapacityUnits: 1
+  AttributeDefinitions:
+  - AttributeName: hotelId
+    AttributeType: S
+  KeySchema:
+  - AttributeName: hotelId
+    KeyType: HASH

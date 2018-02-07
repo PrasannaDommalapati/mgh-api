@@ -5,7 +5,7 @@ provider:
   runtime: nodejs6.10
   stage:   ${opt:stage, self:custom.defaultStage}
   region:  ${self:custom.stage.region}
-  profile: doctorshelp-${self:provider.stage}
+  profile: hotels-${self:provider.stage}
 
 custom:
   defaultStage: local
@@ -19,5 +19,5 @@ resources:
   Resources:
     OrganisationsTable:     ${file(./organisations.yml)}
     UserOrganisationsTable: ${file(./userOrganisations.yml)}
-    QuotesTable:            ${file(./quotes.yml)}
+    hotelsTable:            ${file(./hotels.yml)}
 

@@ -1,0 +1,14 @@
+node_modules
+/.serverless
+/.serverless-local
+/dist/
+npm-debug.log
+/build/*
+!.gitkeep
+.DS_Store
+.idea/
+src/**/*.js
+src/**/*.js.map
+typings
+!src/typings
+*.orig
