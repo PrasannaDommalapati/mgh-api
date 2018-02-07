@@ -1,0 +1,12 @@
+Type: AWS::DynamoDB::Table
+Properties:
+  TableName: userOrganisations
+  ProvisionedThroughput:
+    ReadCapacityUnits:  1
+    WriteCapacityUnits: 1
+  AttributeDefinitions:
+  - AttributeName: userId
+    AttributeType: S
+  KeySchema:
+  - AttributeName: userId
+    KeyType:       HASH
