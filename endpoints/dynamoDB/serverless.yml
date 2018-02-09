@@ -19,5 +19,5 @@ resources:
   Resources:
     OrganisationsTable:     ${file(./organisations.yml)}
     UserOrganisationsTable: ${file(./userOrganisations.yml)}
-    hotelsTable:            ${file(./hotels.yml)}
+    HotelsTable:            ${file(./hotels.yml)}
 

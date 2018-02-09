@@ -1,0 +1,39 @@
+service: user
+
+provider:
+  name:    aws
+  runtime: nodejs6.10
+  stage:   ${opt:stage, self:custom.defaultStage}
+  region:  ${self:custom.stage.region}
+  profile: hotels-${self:provider.stage}
+  environment: ${self:custom.stage}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource:
+        - "arn:aws:dynamodb:${self:provider.region}:*:table/organisations"
+        - "arn:aws:dynamodb:${self:provider.region}:*:table/organisations/index/*"
+        - "arn:aws:dynamodb:${self:provider.region}:*:table/userOrganisations"
+        - "arn:aws:dynamodb:${self:provider.region}:*:table/userOrganisations/index/*"
+
+custom:
+  defaultStage: local
+  webpack:      ./config/webpack.config.js
+  stage:        ${file(../../config/stage.yml):${self:provider.stage}}
+  cors:         ${file(../../config/cors.yml)}
+
+plugins:
+  - serverless-webpack
+
+functions:
+#  organisations
+  organisationsGet:
+    handler: organisations-get.handler
+    events:
+      - http:
+          path: organisations/me
+          method: get
+          cors: ${self:custom.cors}
+          authorizer:
+            arn: ${self:custom.stage.userpool}
