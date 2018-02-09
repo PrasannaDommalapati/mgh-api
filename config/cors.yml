@@ -1,0 +1,6 @@
+origin: '*'
+headers:
+  - Content-Type
+  - Content-Version
+  - Authorization
+allowCredentials: false

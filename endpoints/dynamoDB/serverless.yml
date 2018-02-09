@@ -1,0 +1,23 @@
+service: dynamoDB
+
+provider:
+  name:    aws
+  runtime: nodejs6.10
+  stage:   ${opt:stage, self:custom.defaultStage}
+  region:  ${self:custom.stage.region}
+  profile: hotels-${self:provider.stage}
+
+custom:
+  defaultStage: local
+  stage:        ${file(../../config/stage.yml):${self:provider.stage}}
+
+# ********************************
+# ***          DANGER          ***
+# ********************************
+# TABLES
+resources:
+  Resources:
+    OrganisationsTable:     ${file(./organisations.yml)}
+    UserOrganisationsTable: ${file(./userOrganisations.yml)}
+    HotelsTable:            ${file(./hotels.yml)}
+

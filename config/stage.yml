@@ -1,0 +1,24 @@
+local:
+  s3Bucket: 'com.hotels.local.'
+  region:   eu-central-1
+  userpool: "arn:aws:cognito-idp:eu-west-2:402504575174:userpool/eu-west-2_pLhYytHVq"
+  version:  1.0.0
+  SALT:     "q?Ufd{Ep8>lPQ*~mc|bVT$<*;zI?r(:3lkVk~;pT:**dqbw}.nv334W`@9Z#,ki9"
+staging:
+  s3Bucket: 'com.hotels.staging.'
+  region:   eu-west-1
+  userpool: "arn:aws:cognito-idp:eu-west-2:402504575174:userpool/eu-west-2_pLhYytHVq"
+  version:  1.0.0
+  SALT:     "q?Ufd{Ep8>lPQ*~mc|bVT$<*;zI?r(:3lkVk~;pT:**dqbw}.nv334W`@9Z#,ki9"
+sandbox:
+  s3Bucket: 'com.hotels.sandbox.'
+  region:   us-west-2
+  userpool: "arn:aws:cognito-idp:eu-west-2:402504575174:userpool/eu-west-2_pLhYytHVq"
+  version:  1.0.0
+  SALT:     "q?Ufd{Ep8>lPQ*~mc|bVT$<*;zI?r(:3lkVk~;pT:**dqbw}.nv334W`@9Z#,ki9"
+production:
+  s3Bucket: 'com.hotels.production.'
+  region:   eu-west-2
+  userpool: "arn:aws:cognito-idp:eu-west-2:402504575174:userpool/eu-west-2_pLhYytHVq"
+  version:  1.0.0
+  SALT:     "q?Ufd{Ep8>lPQ*~mc|bVT$<*;zI?r(:3lkVk~;pT:**dqbw}.nv334W`@9Z#,ki9"

@@ -1,0 +1,14 @@
+{
+    "local":      [
+        "- serverless-webpack",
+        "- serverless-dynamodb-local",
+        "- serverless-s3-local",
+        "- serverless-offline"
+    ],
+    "staging":    [
+        "serverless-webpack"
+    ],
+    "production": [
+        "serverless-webpack"
+    ]
+}

@@ -1,0 +1,12 @@
+Type: AWS::DynamoDB::Table
+Properties:
+  TableName: organisations
+  ProvisionedThroughput:
+    ReadCapacityUnits:  1
+    WriteCapacityUnits: 1
+  AttributeDefinitions:
+  - AttributeName: organisationId
+    AttributeType: S
+  KeySchema:
+  - AttributeName: organisationId
+    KeyType:       HASH
