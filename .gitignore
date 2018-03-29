@@ -1,6 +1,6 @@
 node_modules
-/.serverless/*
-/.serverless-local/*
+.serverless/*
+.serverless-local/*
 /dist/
 npm-debug.log
 /build/*

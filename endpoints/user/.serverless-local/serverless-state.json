@@ -140,7 +140,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/user/local/1518187204737-2018-02-09T14:40:04.737Z/user.zip"
+                "S3Key": "serverless/user/local/1522337692507-2018-03-29T15:34:52.507Z/user.zip"
               },
               "FunctionName": "user-local-organisationsGet",
               "Handler": "organisations-get.handler",
@@ -168,14 +168,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "OrganisationsGetLambdaVersionV9IorzaFwgx19fJKZQ8tCO81h5Su29JgR766WYfhPM": {
+          "OrganisationsGetLambdaVersionQqoKqAiwzzkAfhXyhmz0sROlw3XxpA0vRbDOdI5bDk": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "OrganisationsGetLambdaFunction"
               },
-              "CodeSha256": "V9IorzaFwgx19fJKZQ8tCO81h5Su/29JgR766WYfhPM="
+              "CodeSha256": "QqoKqAiwzzkAfhXyhmz0sROlw3+XxpA0vRbDOdI5bDk="
             }
           },
           "ApiGatewayRestApi": {
@@ -314,7 +314,7 @@
               ]
             }
           },
-          "ApiGatewayDeployment1518187204747": {
+          "ApiGatewayDeployment1522337692516": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -369,7 +369,7 @@
           "OrganisationsGetLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "OrganisationsGetLambdaVersionV9IorzaFwgx19fJKZQ8tCO81h5Su29JgR766WYfhPM"
+              "Ref": "OrganisationsGetLambdaVersionQqoKqAiwzzkAfhXyhmz0sROlw3XxpA0vRbDOdI5bDk"
             }
           },
           "ServiceEndpoint": {
@@ -470,7 +470,7 @@
     "artifact": ".webpack-local/.serverless/user.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/user/local/1518187204737-2018-02-09T14:40:04.737Z",
+    "artifactDirectoryName": "serverless/user/local/1522337692507-2018-03-29T15:34:52.507Z",
     "artifact": "user.zip"
   }
 }
