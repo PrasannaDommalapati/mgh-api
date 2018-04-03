@@ -1,30 +1,25 @@
 'use strict';
 
 const user = require('../../../../lib/user');
-const {
-		  handleSuccess,
-		  handleError,
-		  getUserId
-	  }    = require('@headforwards-spd/aws-lambda');
+const organisationApi = require('../../../../lib/wrapper/organisations');
+const lambda    = require('@headforwards-spd/aws-lambda');
 
 exports.handler = (event, context, callback) => {
 
     try {
 
-        const userId = getUserId(event);
-
-        user.getUserOrganisation(userId, ['organisationId'])
+        lambda.checkUserGroup(event, 'Admin')
             .then(
-                organisation => wasteFacilityApi.list(organisation.organisationId, event.resource),
-                error => handleError(error, callback, 'Couldn\'t fetch the organisation id.')
+                () => organisationApi.list(event),
+                error => lambda.handleError(error, callback, 'Couldn\'t fetch the organisation id.')
             )
             .then(
-                wasteFacilities => handleSuccess(wasteFacilities, callback),
-                error => handleError(error, callback, 'Couldn\'t list the waste facilities.')
+                organisations => lambda.handleSuccess(organisations, callback),
+                error => lambda.handleError(error, callback, 'Couldn\'t list the organisations.')
             );
 
     } catch (e) {
 
-        handleError(e, callback);
+        lambda.handleError(e, callback);
     }
 };

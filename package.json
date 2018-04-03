@@ -12,7 +12,7 @@
     "devDependencies": {
         "@headforwards-spd/aws-dynamo": "*",
         "@headforwards-spd/aws-lambda": "*",
-        "@headforwards-spd/aws-s3":     "^1.1.0",
+        "@headforwards-spd/aws-s3":     "*",
         "babel-core":                   "*",
         "babel-loader":                 "*",
         "babel-preset-es2015":          "*",
@@ -21,7 +21,7 @@
         "blob-stream":                  "^0.1.3",
         "chai":                         "*",
         "chai-as-promised":             "*",
-        "cli":                          "^1.0.1",
+        "cli":                          "*",
         "datauri-stream":               "^1.0.3",
         "google-fonts-webpack-plugin":  "^0.4.4",
         "image-size":                   "^0.6.2",

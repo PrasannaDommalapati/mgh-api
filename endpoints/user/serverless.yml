@@ -37,3 +37,21 @@ functions:
           cors: ${self:custom.cors}
           authorizer:
             arn: ${self:custom.stage.userpool}
+  organisationCreate:
+    handler: organisations-create.handler
+    events:
+      - http:
+          path: organisation
+          method: post
+          cors: ${self:custom.cors}
+          authorizer:
+            arn: ${self:custom.stage.userpool}
+  organisationList:
+      handler: organisations-list.handler
+      events:
+        - http:
+            path: organisations
+            method: get
+            cors: ${self:custom.cors}
+            authorizer:
+              arn: ${self:custom.stage.userpool}

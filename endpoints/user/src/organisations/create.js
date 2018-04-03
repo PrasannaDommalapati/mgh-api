@@ -1,20 +1,22 @@
 'use strict';
 
-const api    = require('../../../../lib/wrapper/organisations');
+const organisationApi = require('../../../../lib/wrapper/organisations');
 const lambda = require('@headforwards-spd/aws-lambda');
 
 exports.handler = (event, context, callback) => {
 
     try {
 
-        const organisation = extractData(event);
+        const organisation = lambda.extractData(event);
 
-        lambda.checkUserGroup(event, 'admin')
-              .then(() => api.create(organisation))
-              .catch(error => handleError(error, callback, 'Could not create an organisation.'));
+        lambda.checkUserGroup(event, 'Admin')
+            .then(() => organisationApi.create(organisation),
+                error => lambda.handleError(error, callback, 'Couldn\'t check user group.'))
+            .then(result => lambda.handleSuccess(result, callback),
+                error => lambda.handleError(error, callback, 'Could not create an organisation.'));
 
     } catch (e) {
 
-        handleError(e, callback);
+        lambda.handleError(e, callback);
     }
 };
