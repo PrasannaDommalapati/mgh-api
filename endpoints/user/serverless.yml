@@ -28,11 +28,20 @@ plugins:
 
 functions:
 #  organisations
-  organisationsGet:
-    handler: organisations-get.handler
+  adminOrganisationGet:
+    handler: user-get.handler
     events:
       - http:
           path: organisations/me
+          method: get
+          cors: ${self:custom.cors}
+          authorizer:
+            arn: ${self:custom.stage.userpool}
+  organisationGet:
+    handler: organisation-get.handler
+    events:
+      - http:
+          path: organisations/{organisationId}
           method: get
           cors: ${self:custom.cors}
           authorizer:
@@ -41,12 +50,12 @@ functions:
     handler: organisations-create.handler
     events:
       - http:
-          path: organisation
+          path: organisations
           method: post
           cors: ${self:custom.cors}
           authorizer:
             arn: ${self:custom.stage.userpool}
-  organisationList:
+  organisationsList:
       handler: organisations-list.handler
       events:
         - http:
@@ -55,3 +64,13 @@ functions:
             cors: ${self:custom.cors}
             authorizer:
               arn: ${self:custom.stage.userpool}
+  organisationUpdate:
+      handler: organisation-update.handler
+      events:
+        - http:
+            path: organisations/{organisationId}
+            method: put
+            cors: ${self:custom.cors}
+            authorizer:
+              arn: ${self:custom.stage.userpool}
+

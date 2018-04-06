@@ -1,33 +1,26 @@
 'use strict';
 
-const api  = require('../../../../lib/wrapper/wasteFacility');
-const user = require('../../../../lib/user');
-const {
-          handleSuccess,
-          handleError,
-          getUserId
-      }    = require('@headforwards-spd/aws-lambda');
+const organisationApi = require('../../../../lib/wrapper/organisations');
+const lambda    = require('@headforwards-spd/aws-lambda');
 
 exports.handler = (event, context, callback) => {
 
     try {
 
-        const wasteFacilityId = api.getId(event),
-              wasteFacility   = api.extract(event),
-              userId          = getUserId(event);
+        const organisation = lambda.extractData(event);
 
-        user.getUserOrganisation(userId, ['organisationId'])
+        lambda.checkUserGroup(event, 'Admin')
             .then(
-                organisation => api.update(organisation.organisationId, wasteFacilityId, wasteFacility),
-                error => handleError(error, callback, 'Couldn\'t fetch the organisation id.')
+                () => organisationApi.update(organisation.organisationId, organisation),
+                error => lambda.handleError(error, callback, 'User not in admin group.')
             )
             .then(
-                wasteFacility => handleSuccess(wasteFacility, callback),
-                error => handleError(error, callback, 'Couldn\'t update the waste facility.')
+                organisation => lambda.handleSuccess(organisation, callback),
+                error => lambda.handleError(error, callback, 'Couldn\'t update the organisation.')
             );
 
-    } catch (e) {
+    } catch (error) {
 
-        handleError(e, callback);
+        lambda.handleError(error, callback);
     }
 };

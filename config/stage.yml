@@ -2,7 +2,7 @@ local:
   s3Bucket: 'com.hotels.local.'
   region:   eu-central-1
   userpool: "arn:aws:cognito-idp:eu-west-2:402504575174:userpool/eu-west-2_pLhYytHVq"
-  version:  1.0.0
+  version:  1.0.1
   SALT:     "q?Ufd{Ep8>lPQ*~mc|bVT$<*;zI?r(:3lkVk~;pT:**dqbw}.nv334W`@9Z#,ki9"
 staging:
   s3Bucket: 'com.hotels.staging.'

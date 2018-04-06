@@ -1,7 +1,9 @@
 const organisations = {
-    'organisations-get':    './src/organisations/get.js',
+    'organisation-get':     './src/organisations/get.js',
+    'user-get':             './src/organisations/user-get.js',
     'organisations-create': './src/organisations/create.js',
-    'organisations-list': './src/organisations/list.js',
+    'organisations-list':   './src/organisations/list.js',
+    'organisation-update':  './src/organisations/update.js',
 
 };
 
