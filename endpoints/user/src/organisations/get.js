@@ -10,7 +10,6 @@ exports.handler = (event, context, callback) => {
 
         const organisation = lambda.extractData(event);
 
-console.log(organisation)
         lambda.checkUserGroup(event, 'Admin')
               .then(() => organisationApi.get(organisation.organisationId))
               .then(organisation => lambda.handleSuccess(organisation, callback))

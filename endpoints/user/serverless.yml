@@ -73,4 +73,13 @@ functions:
             cors: ${self:custom.cors}
             authorizer:
               arn: ${self:custom.stage.userpool}
+  organisationdelete:
+      handler: organisation-delete.handler
+      events:
+        - http:
+            path: organisations/{organisationId}
+            method: delete
+            cors: ${self:custom.cors}
+            authorizer:
+              arn: ${self:custom.stage.userpool}
 

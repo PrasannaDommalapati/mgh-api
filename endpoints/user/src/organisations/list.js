@@ -1,6 +1,5 @@
 'use strict';
 
-const user = require('../../../../lib/user');
 const organisationApi = require('../../../../lib/wrapper/organisations');
 const lambda    = require('@headforwards-spd/aws-lambda');
 

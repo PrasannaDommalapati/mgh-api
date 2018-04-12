@@ -4,6 +4,7 @@ const organisations = {
     'organisations-create': './src/organisations/create.js',
     'organisations-list':   './src/organisations/list.js',
     'organisation-update':  './src/organisations/update.js',
+    'organisation-delete':  './src/organisations/delete.js',
 
 };
 

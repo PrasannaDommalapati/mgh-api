@@ -35,6 +35,12 @@
         "LogGroupName": "/aws/lambda/user-local-organisationUpdate"
       }
     },
+    "OrganisationdeleteLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/user-local-organisationdelete"
+      }
+    },
     "IamRoleLambdaExecution": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -89,6 +95,9 @@
                     },
                     {
                       "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/user-local-organisationUpdate:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/user-local-organisationdelete:*"
                     }
                   ]
                 },
@@ -112,6 +121,9 @@
                     },
                     {
                       "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/user-local-organisationUpdate:*:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/user-local-organisationdelete:*:*"
                     }
                   ]
                 },
@@ -152,7 +164,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/user/local/1523029887802-2018-04-06T15:51:27.802Z/user.zip"
+          "S3Key": "serverless/user/local/1523542973543-2018-04-12T14:22:53.543Z/user.zip"
         },
         "FunctionName": "user-local-adminOrganisationGet",
         "Handler": "user-get.handler",
@@ -180,14 +192,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "AdminOrganisationGetLambdaVersionyHxYNFnk9KSabrZ0e6mkltBTi3oYjIzszC8gCV0904": {
+    "AdminOrganisationGetLambdaVersionzotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AdminOrganisationGetLambdaFunction"
         },
-        "CodeSha256": "yHxYNFnk9KSa+brZ0e6mkltBTi3oYjIzszC8gCV0904="
+        "CodeSha256": "zotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g="
       }
     },
     "OrganisationGetLambdaFunction": {
@@ -197,7 +209,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/user/local/1523029887802-2018-04-06T15:51:27.802Z/user.zip"
+          "S3Key": "serverless/user/local/1523542973543-2018-04-12T14:22:53.543Z/user.zip"
         },
         "FunctionName": "user-local-organisationGet",
         "Handler": "organisation-get.handler",
@@ -225,14 +237,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "OrganisationGetLambdaVersionyHxYNFnk9KSabrZ0e6mkltBTi3oYjIzszC8gCV0904": {
+    "OrganisationGetLambdaVersionzotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "OrganisationGetLambdaFunction"
         },
-        "CodeSha256": "yHxYNFnk9KSa+brZ0e6mkltBTi3oYjIzszC8gCV0904="
+        "CodeSha256": "zotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g="
       }
     },
     "OrganisationCreateLambdaFunction": {
@@ -242,7 +254,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/user/local/1523029887802-2018-04-06T15:51:27.802Z/user.zip"
+          "S3Key": "serverless/user/local/1523542973543-2018-04-12T14:22:53.543Z/user.zip"
         },
         "FunctionName": "user-local-organisationCreate",
         "Handler": "organisations-create.handler",
@@ -270,14 +282,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "OrganisationCreateLambdaVersionyHxYNFnk9KSabrZ0e6mkltBTi3oYjIzszC8gCV0904": {
+    "OrganisationCreateLambdaVersionzotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "OrganisationCreateLambdaFunction"
         },
-        "CodeSha256": "yHxYNFnk9KSa+brZ0e6mkltBTi3oYjIzszC8gCV0904="
+        "CodeSha256": "zotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g="
       }
     },
     "OrganisationsListLambdaFunction": {
@@ -287,7 +299,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/user/local/1523029887802-2018-04-06T15:51:27.802Z/user.zip"
+          "S3Key": "serverless/user/local/1523542973543-2018-04-12T14:22:53.543Z/user.zip"
         },
         "FunctionName": "user-local-organisationsList",
         "Handler": "organisations-list.handler",
@@ -315,14 +327,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "OrganisationsListLambdaVersionyHxYNFnk9KSabrZ0e6mkltBTi3oYjIzszC8gCV0904": {
+    "OrganisationsListLambdaVersionzotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "OrganisationsListLambdaFunction"
         },
-        "CodeSha256": "yHxYNFnk9KSa+brZ0e6mkltBTi3oYjIzszC8gCV0904="
+        "CodeSha256": "zotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g="
       }
     },
     "OrganisationUpdateLambdaFunction": {
@@ -332,7 +344,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/user/local/1523029887802-2018-04-06T15:51:27.802Z/user.zip"
+          "S3Key": "serverless/user/local/1523542973543-2018-04-12T14:22:53.543Z/user.zip"
         },
         "FunctionName": "user-local-organisationUpdate",
         "Handler": "organisation-update.handler",
@@ -360,14 +372,59 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "OrganisationUpdateLambdaVersionyHxYNFnk9KSabrZ0e6mkltBTi3oYjIzszC8gCV0904": {
+    "OrganisationUpdateLambdaVersionzotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "OrganisationUpdateLambdaFunction"
         },
-        "CodeSha256": "yHxYNFnk9KSa+brZ0e6mkltBTi3oYjIzszC8gCV0904="
+        "CodeSha256": "zotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g="
+      }
+    },
+    "OrganisationdeleteLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/user/local/1523542973543-2018-04-12T14:22:53.543Z/user.zip"
+        },
+        "FunctionName": "user-local-organisationdelete",
+        "Handler": "organisation-delete.handler",
+        "MemorySize": 1024,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs6.10",
+        "Timeout": 6,
+        "Environment": {
+          "Variables": {
+            "s3Bucket": "com.hotels.local.",
+            "region": "eu-central-1",
+            "userpool": "arn:aws:cognito-idp:eu-west-2:402504575174:userpool/eu-west-2_pLhYytHVq",
+            "version": "1.0.1",
+            "SALT": "q?Ufd{Ep8>lPQ*~mc|bVT$<*;zI?r(:3lkVk~;pT:**dqbw}.nv334W`@9Z#,ki9"
+          }
+        }
+      },
+      "DependsOn": [
+        "OrganisationdeleteLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "OrganisationdeleteLambdaVersionzotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "OrganisationdeleteLambdaFunction"
+        },
+        "CodeSha256": "zotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g="
       }
     },
     "ApiGatewayRestApi": {
@@ -490,7 +547,7 @@
               "ResponseParameters": {
                 "method.response.header.Access-Control-Allow-Origin": "'*'",
                 "method.response.header.Access-Control-Allow-Headers": "'Content-Type,Content-Version,Authorization'",
-                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,PUT,GET'",
+                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,DELETE,PUT,GET'",
                 "method.response.header.Access-Control-Allow-Credentials": "'false'"
               },
               "ResponseTemplates": {
@@ -763,6 +820,48 @@
       },
       "DependsOn": "2UnderscorepLhYytHVqApiGatewayAuthorizer"
     },
+    "ApiGatewayMethodOrganisationsOrganisationidVarDelete": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "DELETE",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceOrganisationsOrganisationidVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "AuthorizationType": "COGNITO_USER_POOLS",
+        "AuthorizerId": {
+          "Ref": "2UnderscorepLhYytHVqApiGatewayAuthorizer"
+        },
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:aws:apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "OrganisationdeleteLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": "2UnderscorepLhYytHVqApiGatewayAuthorizer"
+    },
     "2UnderscorepLhYytHVqApiGatewayAuthorizer": {
       "Type": "AWS::ApiGateway::Authorizer",
       "Properties": {
@@ -778,7 +877,7 @@
         ]
       }
     },
-    "ApiGatewayDeployment1523029887818": {
+    "ApiGatewayDeployment1523542973558": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -791,7 +890,8 @@
         "ApiGatewayMethodOrganisationsOrganisationidVarGet",
         "ApiGatewayMethodOrganisationsPost",
         "ApiGatewayMethodOrganisationsGet",
-        "ApiGatewayMethodOrganisationsOrganisationidVarPut"
+        "ApiGatewayMethodOrganisationsOrganisationidVarPut",
+        "ApiGatewayMethodOrganisationsOrganisationidVarDelete"
       ]
     },
     "AdminOrganisationGetLambdaPermissionApiGateway": {
@@ -958,6 +1058,39 @@
           ]
         }
       }
+    },
+    "OrganisationdeleteLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "OrganisationdeleteLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:aws:execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
     }
   },
   "Outputs": {
@@ -969,31 +1102,37 @@
     "AdminOrganisationGetLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AdminOrganisationGetLambdaVersionyHxYNFnk9KSabrZ0e6mkltBTi3oYjIzszC8gCV0904"
+        "Ref": "AdminOrganisationGetLambdaVersionzotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g"
       }
     },
     "OrganisationGetLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "OrganisationGetLambdaVersionyHxYNFnk9KSabrZ0e6mkltBTi3oYjIzszC8gCV0904"
+        "Ref": "OrganisationGetLambdaVersionzotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g"
       }
     },
     "OrganisationCreateLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "OrganisationCreateLambdaVersionyHxYNFnk9KSabrZ0e6mkltBTi3oYjIzszC8gCV0904"
+        "Ref": "OrganisationCreateLambdaVersionzotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g"
       }
     },
     "OrganisationsListLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "OrganisationsListLambdaVersionyHxYNFnk9KSabrZ0e6mkltBTi3oYjIzszC8gCV0904"
+        "Ref": "OrganisationsListLambdaVersionzotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g"
       }
     },
     "OrganisationUpdateLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "OrganisationUpdateLambdaVersionyHxYNFnk9KSabrZ0e6mkltBTi3oYjIzszC8gCV0904"
+        "Ref": "OrganisationUpdateLambdaVersionzotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g"
+      }
+    },
+    "OrganisationdeleteLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "OrganisationdeleteLambdaVersionzotUhSJHrYPxkcqhsFWQJrgOe2qrYEokQp4CPgMuZ0g"
       }
     },
     "ServiceEndpoint": {
