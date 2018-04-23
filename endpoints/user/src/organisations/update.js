@@ -6,11 +6,12 @@ const lambda    = require('@headforwards-spd/aws-lambda');
 exports.handler = (event, context, callback) => {
 
     try {
-        const organisationId = event.pathParameters.organisationId;
+        const organisationId = event.pathParameters.organisationId,
+        organisation = lambda.extractData(event);
 
         lambda.checkUserGroup(event, 'Admin')
             .then(
-                () => organisationApi.update(organisationId),
+                () => organisationApi.update(organisationId, organisation),
                 error => lambda.handleError(error, callback, 'User not in admin group.')
             )
             .then(

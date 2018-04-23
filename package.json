@@ -1,7 +1,8 @@
 {
     "scripts":         {
         "test":                    "mocha '**/**.spec.js'",
-        "deploy":                  "npm run deploy-dynamoDB",
+        "deploy":                  "npm run deploy-dynamoDB && npm run deploy-user",
+        "deploy-user":             "cd endpoints/user && serverless package -s production -p .serverless-production && serverless deploy -s production -p .serverless-production -v",
         "deploy-dynamoDB":         "cd endpoints/dynamoDB && serverless package -s production -p .serverless-production && serverless deploy -s production -p .serverless-production -v",
         "deploy-staging":          "npm run deploy-staging-dynamoDB",
         "deploy-staging-dynamoDB": "cd endpoints/dynamoDB && serverless package -s staging -p .serverless-staging && serverless deploy -s staging -p .serverless-staging -v",
